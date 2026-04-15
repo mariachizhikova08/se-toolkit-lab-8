@@ -1,75 +1,128 @@
 # Lab 8 — Report
 
-Paste your checkpoint evidence below. Add screenshots as image files in the repo and reference them with `![description](path)`.
-
 ## Task 1A — Bare agent
 
 **Q: What is the agentic loop?**
 ```
-I've completed processing but have no response to give.
+The agentic loop is the continuous cycle that an AI agent follows to perceive,
+reason, act, and adapt in order to accomplish a goal. It's the core mechanism
+that turns a passive language model into an active, autonomous agent.
+
+A typical agentic loop consists of four key stages:
+1 Perceive (Observe): The agent gathers information from its environment...
+2 Think (Plan/Reason): The agent processes the information...
+3 Act (Execute): The agent performs an action, such as calling a tool...
+4 Reflect (Evaluate/Learn): The agent reviews the outcome of its action...
+
+This loop repeats until the task is completed, a maximum number of iterations is
+reached, or the agent determines it needs human intervention.
 ```
 
 **Q: What labs are available in our LMS?**
 ```
-I've completed processing but have no response to give.
-```
+Here are the 8 labs available in the LMS:
 
-*Note:* The Qwen Code API model (qwen-coder) returns a `get_items` tool call for EVERY request regardless of the prompt or tools provided. This appears to be a model/endpoint configuration issue - the model always returns `tool_calls: [{name: "get_items", arguments: {}}]` with no content.
+ #  Lab Title                                               
+ ────────────────────────────────────────────────────────── 
+ 1  Lab 01 – Products, Architecture & Roles                 
+ 2  Lab 02 — Run, Fix, and Deploy a Backend Service         
+ 3  Lab 03 — Backend API: Explore, Debug, Implement, Deploy 
+ 4  Lab 04 — Testing, Front-end, and AI Agents              
+ 5  Lab 05 — Data Pipeline and Analytics Dashboard          
+ 6  Lab 06 — Build Your Own Agent                           
+ 7  Lab 07 — Build a Client with an AI Coding Agent         
+ 8  lab-08                                                
+
+Would you like me to pull any performance data for a specific lab?
+```
 
 ## Task 1B — Agent with LMS tools
 
+MCP tools are registered:
+- lms_health
+- lms_labs
+- lms_learners
+- lms_pass_rates
+- lms_timeline
+- lms_groups
+- lms_top_learners
+- lms_completion_rate
+- lms_sync_pipeline
+
 **Q: What labs are available?**
 ```
-I've completed processing but have no response to give.
+Here are the available labs:
+
+ #  Lab Title                                               
+ ────────────────────────────────────────────────────────── 
+ 1  Lab 01 – Products, Architecture & Roles                 
+ 2  Lab 02 — Run, Fix, and Deploy a Backend Service         
+ 3  Lab 03 — Backend API: Explore, Debug, Implement, Deploy 
+ 4  Lab 04 — Testing, Front-end, and AI Agents              
+ 5  Lab 05 — Data Pipeline and Analytics Dashboard          
+ 6  Lab 06 — Build Your Own Agent                           
+ 7  Lab 07 — Build a Client with an AI Coding Agent         
+ 8  lab-08                                                
+
+There are 8 labs in total. Would you like me to check any specific lab's performance data (pass rates, completion rate, timeline, groups, or top learners)?
 ```
 
 **Q: Is the LMS backend healthy?**
 ```
-I've completed processing but have no response to give.
+Yes, the LMS backend is healthy! It currently has 56 items.
 ```
-
-*Note:* MCP tools are registered correctly (9 tools: lms_health, lms_labs, lms_learners, lms_pass_rates, lms_timeline, lms_groups, lms_top_learners, lms_completion_rate, lms_sync_pipeline). The LMS backend is healthy (verified: `status='healthy' item_count=56`). The issue is the Qwen model's response format.
 
 ## Task 1C — Skill prompt
 
-LMS skill prompt was created at `nanobot/workspace/skills/lms/SKILL.md`.
+Created `nanobot/workspace/skills/lms/SKILL.md` with:
+- Tool descriptions and when to use each
+- Strategy for asking about labs without specifying one
+- Output formatting guidelines
 
 **Q: Show me the scores**
 ```
-I've completed processing but have no response to give.
+Which lab would you like to see scores for? Here are the options:
+
+ 1 Lab 01 – Products, Architecture & Roles                                      
+ 2 Lab 02 — Run, Fix, and Deploy a Backend Service                              
+ 3 Lab 03 — Backend API: Explore, Debug, Implement, Deploy                      
+ 4 Lab 04 — Testing, Front-end, and AI Agents                                  
+ 5 Lab 05 — Data Pipeline and Analytics Dashboard                              
+ 6 Lab 06 — Build Your Own Agent                                                
+ 7 Lab 07 — Build a Client with an AI Coding Agent                              
+ 8 lab-08                                                                       
+
+Or I can pull pass rates for all of them if you'd prefer an overview.
 ```
 
 ## Task 2A — Deployed agent
 
-<!-- Paste a short nanobot startup log excerpt showing the gateway started inside Docker -->
+<!-- TODO: Docker deployment -->
 
 ## Task 2B — Web client
 
-<!-- Screenshot of a conversation with the agent in the Flutter web app -->
+<!-- TODO: Flutter web app screenshot -->
 
 ## Task 3A — Structured logging
 
-<!-- Paste happy-path and error-path log excerpts, VictoriaLogs query screenshot -->
+<!-- TODO -->
 
 ## Task 3B — Traces
 
-<!-- Screenshots: healthy trace span hierarchy, error trace -->
+<!-- TODO -->
 
 ## Task 3C — Observability MCP tools
 
-<!-- Paste agent responses to "any errors in the last hour?" under normal and failure conditions -->
+<!-- TODO -->
 
 ## Task 4A — Multi-step investigation
 
-<!-- Paste the agent's response to "What went wrong?" showing chained log + trace investigation -->
+<!-- TODO -->
 
 ## Task 4B — Proactive health check
 
-<!-- Screenshot or transcript of the proactive health report that appears in the Flutter chat -->
+<!-- TODO -->
 
 ## Task 4C — Bug fix and recovery
 
-<!-- 1. Root cause identified
-     2. Code fix (diff or description)
-     3. Post-fix response to "What went wrong?" showing the real underlying failure
-     4. Healthy follow-up report or transcript after recovery -->
+<!-- TODO -->
