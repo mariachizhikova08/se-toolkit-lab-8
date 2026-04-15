@@ -1,0 +1,19 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "./workspace",
+      "model": "coder-model",
+      "provider": "custom",
+      "maxToolIterations": 40,
+      "contextWindowTokens": 65536,
+      "temperature": 0.7
+    }
+  },
+  "providers": {
+    "custom": {
+      "apiKey": "lab8-maria-secret-key-2026",
+      "apiBase": "http://localhost:42099/v1",
+      "extraHeaders": null
+    }
+  }
+}
