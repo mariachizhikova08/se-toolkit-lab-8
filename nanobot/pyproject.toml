@@ -2,7 +2,6 @@
 name = "nanobot"
 version = "0.1.0"
 description = "Custom HKUDS/nanobot setup"
-readme = "README.md"
 requires-python = ">=3.14.2"
 dependencies = [
     "pydantic",
@@ -10,9 +9,10 @@ dependencies = [
     "opentelemetry-distro[otlp]>=0.61b0",
     "opentelemetry-exporter-otlp-proto-grpc>=1.40.0",
     "opentelemetry-instrumentation-logging>=0.61b0",
+    "nanobot-ai @ https://github.com/HKUDS/nanobot/archive/e7d371ec1e6531b28898ec2c869ef338e8dd46ec.zip",
     
     # Task 1 — uncomment after you add the LMS MCP server.
-    # "mcp-lms",
+    "mcp-lms",
     
     # Task 2B — uncomment after you add the webchat channel.
     # "mcp-webchat",
@@ -21,3 +21,8 @@ dependencies = [
     # Task 3 — uncomment after you add mcp-obs.
     # "mcp-obs",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nanobot*"]
+exclude = ["workspace*", "cron*", ".venv*"]

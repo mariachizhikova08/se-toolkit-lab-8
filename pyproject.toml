@@ -5,7 +5,7 @@ members = [
   "mcp/mcp-lms",
 
   # Task 1 — uncomment after you create the nanobot/ project.
-  # "nanobot",
+  "nanobot",
   
   # Task 2B — uncomment after you add the webchat channel.
   # "nanobot-websocket-channel/nanobot-channel-protocol",
@@ -21,7 +21,8 @@ members = [
 mcp-lms = { workspace = true, editable = true }
 
 # Task 1 — uncomment after you create the nanobot/ project.
-# nanobot = { workspace = true, editable = true }
+nanobot = { workspace = true, editable = true }
+# nanobot-ai = { url = "https://github.com/HKUDS/nanobot/archive/e7d371ec1e6531b28898ec2c869ef338e8dd46ec.zip" }
 
 # Task 2B — uncomment after you add the webchat channel.
 # mcp-webchat = { workspace = true, editable = true }
@@ -34,6 +35,7 @@ mcp-lms = { workspace = true, editable = true }
 
 [dependency-groups]
 dev = [
+  "nanobot-ai @ https://github.com/HKUDS/nanobot/archive/e7d371ec1e6531b28898ec2c869ef338e8dd46ec.zip",
   "poethepoet==0.42.1",
   "pyright==1.1.408",
   "pytest==9.0.2",
