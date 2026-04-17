@@ -6,27 +6,43 @@
 
 ```
 🐈 nanobot
-The agentic loop is the core cycle that enables an AI agent to autonomously     
-achieve goals through repeated observation, decision-making, and action. Here's 
-a simplified breakdown:                                                          
+The agentic loop is a conceptual model for how an autonomous AI (or any
+intelligent agent) continuously interacts with its environment to achieve goals.
+It can be broken down into four recurring steps:
 
- 1 Observe: Gather information (user input, environment state, tool outputs).   
- 2 Reason: Analyze the situation and decide the best next step.                 
- 3 Act: Execute a tool call, command, or action.                                
- 4 Observe Results: Evaluate the outcome.                                       
- 5 Repeat: Use new insights to refine the next step.                            
+1. Perceive / Observe – The agent gathers information from its surroundings
+   (e.g., sensor data, user input, API responses, file system state).
+2. Reason / Plan – It processes that information, updates its internal model,
+   and decides what to do next (selects actions, forms sub‑goals, or generates a
+   plan).
+3. Act / Execute – The agent carries out the chosen action(s) – sending a
+   command, calling a tool, modifying a file, making a network request, etc.
+4. Learn / Update – After acting, the agent receives feedback (success/failure
+   signals, new observations, reward signals) and uses it to refine its model or
+   policy, improving future decisions.
 
-This loop allows me (nanobot) to handle complex tasks dynamically, adapting as  
-new information emerges. For example, if you ask me to "write a report," I       
-might:                                                                          
+The loop repeats indefinitely, allowing the agent to adapt, correct mistakes,
+and make progress toward its objectives. In practice, especially with tool‑using
+LLMs like nanobot, the loop looks like:
 
- • Search the web for templates (web_search),                                   
- • Read a file for context (read_file),                                         
- • Write the report (write_file),                                               
- • And iterate based on your feedback.                                          
+while not goal_met:
+    observe (read files, query APIs, get user input)
+    think (determine next tool call or response)
+    act   (call exec, read_file, edit_file, etc.)
+    learn (interpret tool output, update internal state)
 
-If you'd like examples of how this works in practice or want to explore a       
-specific tool's role in the loop, let me know!                                  
+Key points:
+
+• Closed‑feedback: Each action's result directly influences the next perception
+  step, creating a tight feedback cycle.
+• Goal‑driven: The loop is guided by an explicit or implicit objective (e.g.,
+  "fetch the latest lab scores" or "schedule a reminder").
+• Tool integration: For LLM agents, the "act" stage often means invoking
+  external tools; the loop's power comes from being able to observe tool
+  outputs and reason about them.
+• Safety & alignment: Because the loop can keep iterating autonomously,
+  safeguards (hard limits, human‑in‑the‑loop checks, tool‑access policies) are
+  critical to prevent runaway behavior.
 ```
 
 **Status**: PASS - Agent responds via OpenRouter free model.
@@ -42,7 +58,7 @@ MCP tools registered:
 
 ```
 🐈 nanobot
-Here are the available labs:                                                     
+Hereare the available labs:                                                     
 
  1 Lab 01 – Products, Architecture & Roles                                      
  2 Lab 02 — Run, Fix, and Deploy a Backend Service                              
@@ -51,9 +67,9 @@ Here are the available labs:
  5 Lab 05 — Data Pipeline and Analytics Dashboard                               
  6 Lab 06 — Build Your Own Agent                                                
  7 Lab 07 — Build a Client with an AI Coding Agent                              
- 8 Lab 08 — lab-08                                                              
+ 8 lab-08 (no title specified)                                                  
 
-Let me know if you'd like details about a specific lab!                         
+Would you like more details about any specific lab?                             
 ```
 
 **Status**: PASS - Agent returns real backend data via MCP tools.
@@ -68,30 +84,30 @@ Created `nanobot/workspace/skills/lms/SKILL.md` with tool usage strategy.
 
 ```
 🐈 nanobot
+I'll help you get the scores for Lab 01. Let me first check what labs are       
+available and then get the pass rates for Lab 01.                              
+
+🐈 nanobot
 Here are the scores for Lab 01 – Products, Architecture & Roles:                
 
-Task Scores (Average Score / Attempts):                                         
+Lab 01 Pass Rates:                                                              
 
  • Lab setup: 97.2% (119 attempts)                                              
  • Optional: Add a CI check: 25.0% (4 attempts)                                 
  • Optional: Create a release: 50.0% (2 attempts)                               
  • Optional: Plan skill development: 0.0% (1 attempt)                           
- • Optional: Resolve a merge conflict: 41.7% (6 attempts)                        
+ • Optional: Resolve a merge conflict: 41.7% (6 attempts)                       
  • Task 0: Practice the Git workflow: 65.2% (214 attempts)                      
  • Task 1: Product & architecture description: 59.4% (90 attempts)              
  • Task 2: Roles and skills mapping: 53.9% (42 attempts)                        
 
 Summary:                                                                        
 
- • The lab setup task has the highest average score at 97.2%                    
- • Task 0 (Git workflow) has the most attempts at 214                           
- • The optional "Plan skill development" task has the lowest average score at   
-   0.0% (only 1 attempt)                                                        
- • Most tasks have average scores in the 50-65% range, except for the lab setup 
-   which is much higher and some optional tasks which are lower                 
+ • Highest score: Lab setup (97.2%)                                             
+ • Lowest score: Optional: Plan skill development (0.0%)                        
+ • Most attempts: Task 0: Practice the Git workflow (214)                       
 
-Would you like me to get any other statistics for Lab 01, such as completion    
-rates, group performance, or top learners?                                      
+Would you like me to analyze specific trends or focus on any particular section?
 ```
 
 **Status**: PASS - Skill prompt guides agent to ask for lab name and format results nicely.
